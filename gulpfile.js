@@ -15,10 +15,18 @@ require('laravel-elixir-webpack-official');
 elixir((mix) => {
   mix
   .less('styles.less')
-  .webpack('app.js');
+  .webpack('app.js')
 });
 
 elixir.webpack.mergeConfig({
+  // entry: { 
+  //   welcome: "./resources/assets/js/app.js",
+  //   list: "./resources/assets/js/list.js"
+  // },
+  // output: {
+  //   path: __dirname,
+  //   filename: "[name].bundle.js"
+  // },
   module: {
     loaders: [{
       test: /\.jsx?$/,
