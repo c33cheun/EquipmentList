@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import ImageGrid from './components/ImageGrid.jsx';
+import EquipmentImageGrid from './components/EquipmentImageGrid.jsx';
 
 var equipmentUrl = "./api/equipment";
 var listOfEquipment;
@@ -31,12 +31,10 @@ const EquipmentListView = React.createClass({
           <img src="/images/dozr_logo.svg" />
           <div className="pt4">
             <h1 className="f3 fw5 ttu oswald">List of Equipment</h1>
-            <div id="output"></div>
-             <a target="_blank" href="https://github.com/tachyons-css/tachyons">Link to list</a>
           </div>
         </header>
         <div className="pt4 ph4">
-          <ImageGrid links={ this.props.images }/>
+          <EquipmentImageGrid items={ this.props.images }/>
         </div>
         <div className="pa4 bg-light-grey">
           <span className="bg-gold br1 dib pa3">

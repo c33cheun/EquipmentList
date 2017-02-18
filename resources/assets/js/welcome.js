@@ -1,3 +1,11 @@
+import React from 'react';
+import { render } from 'react-dom';
+import ImageGrid from './components/ImageGrid.jsx';
+
+const { string } = React.PropTypes;
+
+const reactHook = document.querySelector('[data-js="react-hook"]');
+
 const InstructionComponent = React.createClass({
   propTypes: {
     name: string

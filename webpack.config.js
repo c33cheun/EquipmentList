@@ -3,7 +3,7 @@ var webpack = require("webpack");
  
 module.exports = {   
   entry: { 
-    welcome: "./resources/assets/js/app.js",
+    welcome: "./resources/assets/js/welcome.js",
     list: "./resources/assets/js/list.js"
   },
   output: {
