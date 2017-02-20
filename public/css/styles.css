@@ -7892,7 +7892,7 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
   height: 230px;
-  width: 328px;
+  width: 352px;
   z-index: -1;
 }
 .rate-container {
@@ -7909,7 +7909,14 @@ body {
 .details-image {
   position: inherit;
   bottom: 45%;
-  left: 33%;
+  right: 33%;
+}
+.image-crop-details {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 400px;
+  width: 448px;
+  z-index: -1;
 }
 .button {
   height: 18px;

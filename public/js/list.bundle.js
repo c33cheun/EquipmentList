@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a54963e5e3c2a12b80cd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b61301c18548268aabed"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -22316,7 +22316,7 @@ module.exports = traverseAllChildren;
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -22330,9 +22330,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var array = _react2.default.PropTypes.array;
 
+//check image function, derived from: http://stackoverflow.com/questions/18837735/check-if-image-exists-on-server-using-javascript
+
+function doesImageExist(urlToImage) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('HEAD', '/images/' + urlToImage, false);
+  xhr.send();
+
+  if (xhr.status == "404" || !urlToImage || urlToImage.length === 0) {
+    console.log("File doesn't exist");
+    return false;
+  } else {
+    console.log("File exists");
+    return true;
+  }
+}
 
 var ImageGrid = _react2.default.createClass({
-  displayName: "ImageGrid",
+  displayName: 'ImageGrid',
 
   propTypes: {
     items: array
@@ -22340,49 +22355,56 @@ var ImageGrid = _react2.default.createClass({
 
   render: function render() {
     var images = this.props.items.map(function (item) {
+
+      //check if image is valid
+      var imageSrc = item.picture;
+      if (doesImageExist(imageSrc) == false) {
+        imageSrc = 'noimage.png';
+      }
+
       return _react2.default.createElement(
-        "div",
-        { className: "fl w-100 w-25-ns pa3", key: item.id },
+        'div',
+        { className: 'fl w-100 w-25-ns pa3', key: item.id },
         _react2.default.createElement(
-          "a",
-          { href: "/details?id=" + item.id },
+          'a',
+          { href: '/details?id=' + item.id },
           _react2.default.createElement(
-            "div",
-            { className: "container link hide-child" },
+            'div',
+            { className: 'container link hide-child' },
             _react2.default.createElement(
-              "span",
-              { className: "hover-image white dtc child w-100 h-100" },
+              'span',
+              { className: 'hover-image white dtc child w-100 h-100' },
               _react2.default.createElement(
-                "span",
-                { className: "details-image pa2 ba v-mid" },
-                "View Details"
+                'span',
+                { className: 'details-image pa2 ba v-mid' },
+                'View Details'
               )
             ),
-            _react2.default.createElement("img", { className: "image-crop", src: "/images/" + item.picture }),
+            _react2.default.createElement('img', { className: 'image-crop', src: '/images/' + imageSrc }),
             _react2.default.createElement(
-              "div",
-              { className: "rate-container white pb1 pt1 ph2" },
+              'div',
+              { className: 'rate-container white pb1 pt1 ph2' },
               _react2.default.createElement(
-                "b",
-                { className: "f4" },
-                "$",
+                'b',
+                { className: 'f4' },
+                '$',
                 item.rate
               ),
               _react2.default.createElement(
-                "span",
-                { className: "f6" },
-                "/mo"
+                'span',
+                { className: 'f6' },
+                '/mo'
               )
             )
           ),
           _react2.default.createElement(
-            "div",
-            { className: "fl w-100 w-100-ns pa2 bg-light-grey bb bl br mid-grey" },
+            'div',
+            { className: 'fl w-100 w-100-ns pa2 bg-light-grey bb bl br mid-grey' },
             _react2.default.createElement(
-              "span",
+              'span',
               null,
               item.make,
-              " ",
+              ' ',
               item.model
             )
           )
@@ -22391,8 +22413,8 @@ var ImageGrid = _react2.default.createClass({
     });
 
     return _react2.default.createElement(
-      "div",
-      { className: "cf" },
+      'div',
+      { className: 'cf' },
       images
     );
   }
@@ -22445,20 +22467,20 @@ var EquipmentListView = _react2.default.createClass({
     console.log(this);
     return _react2.default.createElement(
       'div',
-      { className: 'pt4' },
+      { className: 'pt4 ph2' },
       _react2.default.createElement(
         'header',
-        { className: 'ph4' },
-        _react2.default.createElement('img', { src: '/images/dozr_logo.svg' }),
+        { className: 'ph3' },
+        _react2.default.createElement('img', { className: 'pb1', src: '/images/dozr_logo.svg' }),
         _react2.default.createElement(
           'div',
-          { className: 'pt4' },
+          { className: 'pb2' },
           _react2.default.createElement('hr', null)
         )
       ),
       _react2.default.createElement(
         'div',
-        { className: 'pt2 ph4' },
+        { className: 'pt2' },
         _react2.default.createElement(_EquipmentImageGrid2.default, { items: this.props.images })
       )
     );

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a54963e5e3c2a12b80cd"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b61301c18548268aabed"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -22330,6 +22330,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var reactHook = document.querySelector('[data-js="react-hook"]');
 
+//check image function, derived from: http://stackoverflow.com/questions/18837735/check-if-image-exists-on-server-using-javascript
+function doesImageExist(urlToImage) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('HEAD', '/images/' + urlToImage, false);
+  xhr.send();
+
+  if (xhr.status == "404" || !urlToImage || urlToImage.length === 0) {
+    console.log("File doesn't exist");
+    return false;
+  } else {
+    console.log("File exists");
+    return true;
+  }
+}
+
 //parse and get id from query string: http://stackoverflow.com/questions/2907482/how-to-get-the-query-string-by-javascript
 function getQueryStrings() {
   var assoc = {};
@@ -22376,6 +22391,12 @@ var EquipmentDetailView = _react2.default.createClass({
     console.log(this);
     var detailsDate = new Date(this.props.details.year);
     var year = detailsDate.getFullYear();
+    //check if image is valid
+    var imageSrc = this.props.details.picture;
+    if (doesImageExist(imageSrc) == false) {
+      imageSrc = 'noimage.png';
+    }
+
     return _react2.default.createElement(
       'div',
       { className: 'pt4 pl3 pr3' },
@@ -22384,12 +22405,12 @@ var EquipmentDetailView = _react2.default.createClass({
         null,
         _react2.default.createElement(
           'div',
-          { className: 'pb2' },
+          { className: 'pb1' },
           _react2.default.createElement('img', { src: '/images/dozr_logo.svg' })
         ),
         _react2.default.createElement(
           'div',
-          { className: 'pb4' },
+          { className: 'pb2' },
           _react2.default.createElement('hr', null)
         )
       ),
@@ -22398,8 +22419,8 @@ var EquipmentDetailView = _react2.default.createClass({
         { className: 'cf' },
         _react2.default.createElement(
           'div',
-          { className: 'fl w-100 w-25-ns pl3' },
-          _react2.default.createElement('img', { className: 'image-crop', src: '/images/' + this.props.details.picture })
+          { className: 'fl w-100 w-25-ns' },
+          _react2.default.createElement('img', { className: 'image-crop-details', src: '/images/' + imageSrc })
         ),
         _react2.default.createElement(
           'div',
@@ -22418,7 +22439,7 @@ var EquipmentDetailView = _react2.default.createClass({
             ),
             _react2.default.createElement(
               'div',
-              { className: 'fl w-100 light-grey' },
+              { className: 'fl w-100 mid-grey' },
               _react2.default.createElement(
                 'div',
                 { className: 'fl w-50 f5' },
@@ -22433,7 +22454,7 @@ var EquipmentDetailView = _react2.default.createClass({
             ),
             _react2.default.createElement(
               'div',
-              { className: 'fl w-100 pt4' },
+              { className: 'fl w-100 pt5' },
               _react2.default.createElement(
                 'div',
                 { className: 'fl w-50 w-50-ns pr3' },

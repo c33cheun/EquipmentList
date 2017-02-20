@@ -23,14 +23,14 @@ const EquipmentListView = React.createClass({
   render () {
     console.log(this);
     return (
-      <div className="pt4"> 
-        <header className="ph4">
-          <img src="/images/dozr_logo.svg" />
-          <div className="pt4">
+      <div className="pt4 ph2"> 
+        <header className ="ph3">
+          <img className="pb1" src="/images/dozr_logo.svg" />
+          <div className="pb2">
             <hr></hr>
           </div>
         </header>
-        <div className="pt2 ph4">
+        <div className="pt2">
           <EquipmentImageGrid items={ this.props.images }/>
         </div>
       </div>
