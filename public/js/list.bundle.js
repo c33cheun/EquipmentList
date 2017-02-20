@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "d5a9e9d43a83d7145d85"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a54963e5e3c2a12b80cd"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -22345,16 +22345,20 @@ var ImageGrid = _react2.default.createClass({
         { className: "fl w-100 w-25-ns pa3", key: item.id },
         _react2.default.createElement(
           "a",
-          { href: "/details?id=" + item.id, className: "link hide-child:hover" },
+          { href: "/details?id=" + item.id },
           _react2.default.createElement(
             "div",
-            { className: "container" },
-            _react2.default.createElement("img", { className: "image-crop", src: "/images/" + item.picture }),
+            { className: "container link hide-child" },
             _react2.default.createElement(
               "span",
-              { className: "white dtc v-mid w-100 h-100 child bg-gold-40 pa5" },
-              "View Details"
+              { className: "hover-image white dtc child w-100 h-100" },
+              _react2.default.createElement(
+                "span",
+                { className: "details-image pa2 ba v-mid" },
+                "View Details"
+              )
             ),
+            _react2.default.createElement("img", { className: "image-crop", src: "/images/" + item.picture }),
             _react2.default.createElement(
               "div",
               { className: "rate-container white pb1 pt1 ph2" },

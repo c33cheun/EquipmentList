@@ -12,12 +12,15 @@ const ImageGrid = React.createClass({
       return (
           <div className="fl w-100 w-25-ns pa3" key={item.id}>
 
-            <a href={`/details?id=${item.id}`} className="link hide-child:hover">
-              <div className="container">
-                <img className="image-crop" src={`/images/${item.picture}`} />
-                <span className="white dtc v-mid w-100 h-100 child bg-gold-40 pa5">
-                  View Details
+            <a href={`/details?id=${item.id}`}>
+              <div className="container link hide-child">
+                <span className="hover-image white dtc child w-100 h-100">
+                  <span className="details-image pa2 ba v-mid">
+                    View Details
+                  </span>
                 </span>
+                <img className="image-crop" src={`/images/${item.picture}`} />
+    
                 <div className="rate-container white pb1 pt1 ph2">
                   <b className='f4'>${item.rate}</b>
                   <span className='f6'>/mo</span>
