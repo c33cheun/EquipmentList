@@ -30,7 +30,7 @@ const EquipmentListView = React.createClass({
             <hr></hr>
           </div>
         </header>
-        <div className="pt4 ph4">
+        <div className="pt2 ph4">
           <EquipmentImageGrid items={ this.props.images }/>
         </div>
       </div>

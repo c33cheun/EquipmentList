@@ -33,6 +33,11 @@ const InstructionComponent = React.createClass({
           <h3 className="fw1 ttu oswald">{`What youll be building`}</h3>
           <ImageGrid links={['listview.png', 'listing.png', 'mobile.png', 'guide.png']} />
         </div>
+        <div className="pa4 bg-light-grey">
+          <span className="bg-gold br1 dib pa3">
+            <a className="link link-underline white pa3" target="_blank" href="https://drive.google.com/drive/folders/0B04K4CL8KavAdGNkUHFkdUVESHc?usp=sharing">Download Design Files</a>
+          </span>
+        </div>
       </div>
     );
   }

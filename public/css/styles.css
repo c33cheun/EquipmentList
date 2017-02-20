@@ -7887,16 +7887,18 @@ body {
 .container {
   position: relative;
   height: 230px;
-  width: 328px;
 }
 .image-crop {
   -o-object-fit: cover;
   object-fit: cover;
+  height: 230px;
+  width: 328px;
 }
 .rate-container {
   position: absolute;
-  left: 16px;
-  bottom: 8px;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(140, 140, 140, 0.59);
 }
 .button {
   height: 18px;

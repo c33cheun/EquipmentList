@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dc006e85949aec9cda1e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d5a9e9d43a83d7145d85"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -22466,6 +22466,19 @@ var InstructionComponent = _react2.default.createClass({
           'What youll be building'
         ),
         _react2.default.createElement(_ImageGrid2.default, { links: ['listview.png', 'listing.png', 'mobile.png', 'guide.png'] })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'pa4 bg-light-grey' },
+        _react2.default.createElement(
+          'span',
+          { className: 'bg-gold br1 dib pa3' },
+          _react2.default.createElement(
+            'a',
+            { className: 'link link-underline white pa3', target: '_blank', href: 'https://drive.google.com/drive/folders/0B04K4CL8KavAdGNkUHFkdUVESHc?usp=sharing' },
+            'Download Design Files'
+          )
+        )
       )
     );
   }

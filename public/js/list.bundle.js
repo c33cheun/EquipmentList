@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "dc006e85949aec9cda1e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d5a9e9d43a83d7145d85"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -22341,34 +22341,46 @@ var ImageGrid = _react2.default.createClass({
   render: function render() {
     var images = this.props.items.map(function (item) {
       return _react2.default.createElement(
-        "a",
-        { href: "/details?id=" + item.id },
+        "div",
+        { className: "fl w-100 w-25-ns pa3", key: item.id },
         _react2.default.createElement(
-          "div",
-          { className: "fl w-100 w-25-ns pa2 border-box h5", key: item.id },
+          "a",
+          { href: "/details?id=" + item.id, className: "link hide-child:hover" },
           _react2.default.createElement(
             "div",
             { className: "container" },
             _react2.default.createElement("img", { className: "image-crop", src: "/images/" + item.picture }),
             _react2.default.createElement(
+              "span",
+              { className: "white dtc v-mid w-100 h-100 child bg-gold-40 pa5" },
+              "View Details"
+            ),
+            _react2.default.createElement(
               "div",
-              { className: "rate-container" },
+              { className: "rate-container white pb1 pt1 ph2" },
               _react2.default.createElement(
                 "b",
-                null,
+                { className: "f4" },
+                "$",
                 item.rate
               ),
-              "/mo"
+              _react2.default.createElement(
+                "span",
+                { className: "f6" },
+                "/mo"
+              )
             )
           ),
           _react2.default.createElement(
             "div",
-            { className: "fl w-100 w-100-ns pa2" },
-            " ",
-            item.make,
-            " ",
-            item.model,
-            " "
+            { className: "fl w-100 w-100-ns pa2 bg-light-grey bb bl br mid-grey" },
+            _react2.default.createElement(
+              "span",
+              null,
+              item.make,
+              " ",
+              item.model
+            )
           )
         )
       );
@@ -22442,7 +22454,7 @@ var EquipmentListView = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'div',
-        { className: 'pt4 ph4' },
+        { className: 'pt2 ph4' },
         _react2.default.createElement(_EquipmentImageGrid2.default, { items: this.props.images })
       )
     );
