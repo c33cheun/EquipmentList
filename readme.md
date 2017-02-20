@@ -1,7 +1,7 @@
 starter
 =======
 
-This is the starter template edited by Christopher Cheung for an interview with Dozr. 
+This is the starter template edited by Christopher Cheung for an interview. 
 
 Setup
 =====
@@ -40,7 +40,7 @@ You can update your `/etc/hosts` file to add a name to your service:
 ::1             localhost
 
 
-192.168.10.10  starter.dozr.dev
+192.168.10.10  starter.site.dev
 ```
 
-Then you can point your browser to http://starter.dozr.dev
+Then you can point your browser to http://starter.site.dev
