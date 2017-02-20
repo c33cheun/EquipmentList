@@ -1,7 +1,7 @@
 starter
 =======
 
-This is the starter template edited by Christopher Cheung for an interview. 
+This is the starter template edited by Christopher Cheung for a front end web programming challenge. 
 
 Setup
 =====
