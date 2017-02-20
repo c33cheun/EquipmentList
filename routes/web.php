@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('list', function() {
 	return view('listPage');
 });
+
+Route::get('details', function() {
+	return view('equipmentDetails');
+});

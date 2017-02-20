@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Chris Cheung Completed Challenge</title>
+        <title>Equipment Details</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto" rel="stylesheet" type="text/css">
@@ -14,7 +14,7 @@
         
     </head>
     <body>
-        <div id='reactList'></div>
-        <script src="{{ URL::asset('/js/list.bundle.js') }}"></script>
+        <div data-js="react-hook"></div>
+        <script src="{{ URL::asset('/js/details.bundle.js') }}"></script>
     </body>
 </html>

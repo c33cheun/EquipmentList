@@ -1,10 +1,11 @@
 var path = require("path");
 var webpack = require("webpack");
- 
+//modified and derived from: https://www.garysieling.com/blog/using-multiple-entry-points-webpack
 module.exports = {   
   entry: { 
     welcome: "./resources/assets/js/welcome.js",
-    list: "./resources/assets/js/list.js"
+    list: "./resources/assets/js/list.js",
+    details: "./resources/assets/js/details.js"
   },
   output: {
     path: __dirname,
